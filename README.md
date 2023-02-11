@@ -11,7 +11,7 @@ In summary, the parking code uses the number plate information obtained from the
 
 ## HOW IT WORKS
 
-This code defines a **CarGate** class that represents a gate that opens only when a car has made a payment. The **CarGate** class has several methods:
+This code defines a ``` **CarGate** ``` class that represents a gate that opens only when a car has made a payment. The ``` **CarGate** ``` class has several methods:
 
 1. ***__init__*** method: This is a constructor method that is called when an instance of the **CarGate** class is created. It initializes the **payment_status** dictionary that keeps track of the payment status of cars that have entered the gate.
 
