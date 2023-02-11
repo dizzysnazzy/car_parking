@@ -11,14 +11,14 @@ In summary, the parking code uses the number plate information obtained from the
 
 ## HOW IT WORKS
 
-This code defines a ``` **CarGate** ``` class that represents a gate that opens only when a car has made a payment. The ``` **CarGate** ``` class has several methods:
+This code defines a ```CarGate``` class that represents a gate that opens only when a car has made a payment. The ```CarGate``` class has several methods:
 
-1. ***__init__*** method: This is a constructor method that is called when an instance of the **CarGate** class is created. It initializes the **payment_status** dictionary that keeps track of the payment status of cars that have entered the gate.
+1. ```__init__``` method: This is a constructor method that is called when an instance of the ```CarGate``` class is created. It initializes the ```payment_status``` dictionary that keeps track of the payment status of cars that have entered the gate.
 
-2. ***scan_number_plate*** method: This method scans the car's number plate. It takes no arguments and returns the owner's details obtained from an API call. The API is called using the **requests** library and the URL is constructed using the scanned number plate. The response from the API is loaded into a dictionary using the **json** library.
+2. ```scan_number_plate``` method: This method scans the car's number plate. It takes no arguments and returns the owner's details obtained from an API call. The API is called using the ```requests``` library and the URL is constructed using the scanned number plate. The response from the API is loaded into a dictionary using the ```json``` library.
 
-3. ***prompt_mpesa_payment*** method: This method prompts the car owner to make a payment. It takes two arguments: **owner_details** and **amount**. It prints a message asking the owner to make a payment and, assuming the payment is successful, updates the **payment_status** dictionary to reflect that the car has made a payment.
+3. ```prompt_mpesa_payment``` method: This method prompts the car owner to make a payment. It takes two arguments: ```owner_details``` and ```amount```. It prints a message asking the owner to make a payment and, assuming the payment is successful, updates the ```payment_status``` dictionary to reflect that the car has made a payment.
 
-4. ***open_gate*** method: This method opens the gate if the car has made a payment. It takes one argument: **number_plate**. It checks if the **payment_status** dictionary has an entry for the specified **number_plate** and, if it does, whether the entry is **True** (i.e., the car has made a payment). If the car has made a payment, the gate is opened, otherwise, a message is printed asking the car to make a payment.
+4. ```open_gate``` method: This method opens the gate if the car has made a payment. It takes one argument: ```number_plate```. It checks if the ```payment_status``` dictionary has an entry for the specified ```number_plate``` and, if it does, whether the entry is ```True``` (i.e., the car has made a payment). If the car has made a payment, the gate is opened, otherwise, a message is printed asking the car to make a payment.
 
-Finally, an instance of the **CarGate** class is created and stored in the **car_gate** variable. The car's number plate is then scanned and the car owner's details are obtained. If the car has not made a payment, a payment is prompted. Finally, the gate is opened or a message is printed asking the car to make a payment.
+Finally, an instance of the ```CarGate``` class is created and stored in the ```car_gate``` variable. The car's number plate is then scanned and the car owner's details are obtained. If the car has not made a payment, a payment is prompted. Finally, the gate is opened or a message is printed asking the car to make a payment.
