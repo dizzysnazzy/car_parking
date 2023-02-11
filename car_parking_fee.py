@@ -24,3 +24,11 @@ class CarGate:
         # Assuming payment is successful
         self.payment_status[owner_details['number_plate']] = True
         print("Payment successful!")
+
+
+    def open_gate(self, number_plate):
+        # Check if payment has been made for the car with the specified number plate
+        if number_plate in self.payment_status and self.payment_status[number_plate]:
+            print("Gate opened. Enjoy your drive!")
+        else:
+            print("Payment required. Please make payment and try again.")
