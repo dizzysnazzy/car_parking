@@ -32,3 +32,15 @@ class CarGate:
             print("Gate opened. Enjoy your drive!")
         else:
             print("Payment required. Please make payment and try again.")
+#Initialize the CarGate object
+car_gate = CarGate()
+
+# Simulate a car entering the gate
+number_plate = input("Enter car number plate:")
+owner_details = car_gate.scan_number_plate(number_plate)
+
+if number_plate not in car_gate.payment_status:
+    # Car has not made payment before
+    car_gate.prompt_mpesa_payment(owner_details, 100)
+
+car_gate.open_gate(number_plate)
