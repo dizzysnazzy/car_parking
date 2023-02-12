@@ -11,6 +11,8 @@ In summary, the parking code uses the number plate information obtained from the
 
 ## HOW IT WORKS
 
+### CAR_PARKING_FEE.PY
+
 This code defines a ```CarGate``` class that represents a gate that opens only when a car has made a payment. The ```CarGate``` class has several methods:
 
 1. ```__init__``` method: This is a constructor method that is called when an instance of the ```CarGate``` class is created. It initializes the ```payment_status``` dictionary that keeps track of the payment status of cars that have entered the gate.
@@ -22,3 +24,11 @@ This code defines a ```CarGate``` class that represents a gate that opens only w
 4. ```open_gate``` method: This method opens the gate if the car has made a payment. It takes one argument: ```number_plate```. It checks if the ```payment_status``` dictionary has an entry for the specified ```number_plate``` and, if it does, whether the entry is ```True``` (i.e., the car has made a payment). If the car has made a payment, the gate is opened, otherwise, a message is printed asking the car to make a payment.
 
 Finally, an instance of the ```CarGate``` class is created and stored in the ```car_gate``` variable. The car's number plate is then scanned and the car owner's details are obtained. If the car has not made a payment, a payment is prompted. Finally, the gate is opened or a message is printed asking the car to make a payment.
+
+### OPERATE.PY
+
+The ```number_plates``` dictionary is a manual collection of number plates and their corresponding owner information. Instead of getting the number plate and owner details from an API, the information is stored locally in the code. The ```number_plates``` dictionary is defined in the ```__init__``` method and is therefore accessible to all other methods within the ```CarGate``` class. The keys of the dictionary are the number plates (e.g. "KCC 123A") and the values are dictionaries that contain the owner name, owner phone, and number plate for that particular car.
+
+In the ```scan_number_plate``` method, the user is prompted to enter a number plate. If the entered number plate is found in the ```number_plates``` dictionary, the corresponding owner information is returned. If the entered number plate is not found in the ```number_plates``` dictionary, the method returns ```None```.
+
+The rest of the code functions the same way as ```car_parking_fee.py``` file, checking the payment status for the entered number plate and opening the gate if the payment has been made, or prompting for payment if it has not been made.
